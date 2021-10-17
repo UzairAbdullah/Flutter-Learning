@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:install_check/pages/home_page.dart';
 import 'package:install_check/pages/login_page.dart';
+import 'package:install_check/utils/routes.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
 
@@ -23,9 +24,12 @@ class MyApp extends StatelessWidget {
         // darkTheme is the setting for dark theme
         brightness: Brightness.dark,
       ),
-      // initialRoute: "/home",
+      initialRoute: "/login",
       // home: HomePage(),
-      routes: {"/": (context) => LoginPage(), "/home": (context) => HomePage()},
+      routes: {
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage()
+      },
     );
   }
 }
