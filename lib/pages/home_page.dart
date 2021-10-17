@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           child: Container(
         child: const Text("First Application 1"),
       )),
-      drawer: const Drawer(),
+      // drawer: const Drawer(),
     );
   }
 }
