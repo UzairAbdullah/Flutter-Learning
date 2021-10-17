@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         // Theme is the settings for light theme
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.cyan,
       ),
       themeMode: ThemeMode.light, // themeMode: ThemeMode.dark,  for dark theme
       darkTheme: ThemeData(
