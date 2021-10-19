@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:install_check/utils/routes.dart';
+import 'package:install_check/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,9 +13,10 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
           child: Container(
-        child: const Text("First Application 1"),
-      )),
-      // drawer: const Drawer(),
+              // child: const Text("First Application 1"),
+
+              )),
+      drawer: const MyDrawer(),
     );
   }
 }
