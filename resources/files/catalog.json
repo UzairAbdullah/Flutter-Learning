@@ -1,0 +1,48 @@
+{
+    "products":[
+        {
+            "Id": 1,
+            "name": "Iphone 12",
+            "desc": "12GB RAM, 164GB Rom",
+            "price": 999,
+            "color": "White",
+            "Image":
+          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=80&.v=1617135051000"
+        },
+        {
+            "Id": 2,
+            "name": "Pixel 5",
+            "desc": "Google Pixel Phone 5th Generation",
+            "price": 699,
+            "color": "#00ac51",
+            "Image": "https://www.slashgear.com/wp-content/uploads/2020/12/Pixel-5-colors-959x800.jpg"
+        },
+        {
+            "Id": 3,
+            "name": "M1 Macbook Air",
+            "desc": "Appel Macbook air with apple silicon",
+            "price": 1099,
+            "color": "#e0bfae",
+            "Image":
+          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=80&.v=1617135051000"
+        },
+        {
+            "Id": 4,
+            "name": "Iphone 12",
+            "desc": "12GB RAM, 164GB Rom",
+            "price": 999,
+            "color": "White",
+            "Image":
+          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=80&.v=1617135051000"
+        },
+        {
+            "Id": 5,
+            "name": "Iphone 12",
+            "desc": "12GB RAM, 164GB Rom",
+            "price": 999,
+            "color": "White",
+            "Image":
+          "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-family-select-2021?wid=940&hei=1112&fmt=jpeg&qlt=80&.v=1617135051000"
+        }
+    ]
+}

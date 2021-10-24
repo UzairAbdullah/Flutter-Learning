@@ -15,6 +15,8 @@ class ItemWidget extends StatelessWidget {
         subtitle: Text(item.desc),
         tileColor: Colors.grey.shade300,
         trailing: Text("\$${item.price}"),
+
+        // onTap: (){},
       ),
     );
   }
