@@ -46,43 +46,15 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
         child: CatalogModel.items.isNotEmpty
-            ? GridView.builder(
-                // ignore: prefer_const_constructors
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
-                itemCount: CatalogModel.items.length,
+            ? ListView.builder(
+                itemCount:
+                    CatalogModel.items.length, // itemCount: dummyList.length,
                 itemBuilder: (context, index) {
-                  final Item = CatalogModel.items[index];
-                  return Card(
-                      clipBehavior: Clip.antiAlias,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
-                      child: GridTile(
-                        child: Image.network(Item.Image),
-                        header: Container(
-                          child: Text(
-                            Item.name,
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          padding: EdgeInsets.all(16),
-                          color: Colors.cyan,
-                        ),
-                        footer: Container(
-                          child: Text(Item.price.toString()),
-                          padding: EdgeInsets.all(16),
-                          color: Colors.grey.shade400,
-                        ),
-                      ));
-                })
-            // ListView.builder(
-            //     itemCount:
-            //         CatalogModel.items.length, // itemCount: dummyList.length,
-            //     itemBuilder: (context, index) {
-            //       return ItemWidget(
-            //         item: CatalogModel.items[index], // item: dummyList[index],
-            //       );
-            //     },
-            //   )
+                  return ItemWidget(
+                    item: CatalogModel.items[index], // item: dummyList[index],
+                  );
+                },
+              )
             : Center(child: CircularProgressIndicator()),
       ),
       drawer: const MyDrawer(),
