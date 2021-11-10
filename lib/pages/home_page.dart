@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -45,6 +46,14 @@ class _HomePageState extends State<HomePage> {
     // ignore: prefer_const_constructors
     return Scaffold(
       backgroundColor: MyThemes.creamColor,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 16.0),
+        child: FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          child: Icon(CupertinoIcons.cart),
+          elevation: 2.0,
+        ),
+      ),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(24),

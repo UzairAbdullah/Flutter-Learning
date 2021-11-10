@@ -11,10 +11,11 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyThemes.creamColor,
-      // appBar: AppBar(
-      //   title: Text(catalog.name),
-      //   backgroundColor: Colors.cyan,
-      // ),
+      appBar: AppBar(
+        title: Text(catalog.name),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+      ),
       bottomNavigationBar: Container(
         color: Colors.white,
         child: Padding(
@@ -28,10 +29,10 @@ class HomeDetailPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {},
-                child: Text("Buy"),
+                child: Text("Add to Cart"),
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all(StadiumBorder()),
-                    fixedSize: MaterialStateProperty.all(Size(100, 45))),
+                    fixedSize: MaterialStateProperty.all(Size(120, 45))),
               )
             ],
           ),
@@ -53,29 +54,30 @@ class HomeDetailPage extends StatelessWidget {
               ),
             ),
             Expanded(
-                child: VxArc(
-                    arcType: VxArcType.CONVEY,
-                    edge: VxEdge.TOP,
-                    height: 20,
-                    child: Container(
-                      width: context.screenWidth,
-                      color: Colors.white,
-                      child: Column(
-                        children: [
-                          SizedBox(height: 20),
-                          Text(
-                            catalog.name,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 32),
-                          ),
-                          Text(
-                            catalog.desc,
-                            style:
-                                TextStyle(color: Colors.black.withOpacity(0.5)),
-                          ),
-                        ],
+              child: VxArc(
+                arcType: VxArcType.CONVEY,
+                edge: VxEdge.TOP,
+                height: 20,
+                child: Container(
+                  width: context.screenWidth,
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      SizedBox(height: 20),
+                      Text(
+                        catalog.name,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 32),
                       ),
-                    )))
+                      Text(
+                        catalog.desc,
+                        style: TextStyle(color: Colors.black.withOpacity(0.5)),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
