@@ -45,13 +45,18 @@ class _HomePageState extends State<HomePage> {
     // final dummyList = List.generate(50, (index) => CatalogModel.items[0]);  // to test for multiple items in listview
     // ignore: prefer_const_constructors
     return Scaffold(
-      backgroundColor: MyThemes.creamColor,
+      backgroundColor: Theme.of(context).canvasColor,
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 16.0),
         child: FloatingActionButton(
           onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          child: Icon(CupertinoIcons.cart),
+          child: Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
           elevation: 2.0,
+          // backgroundColor:
+          //     Theme.of(context).floatingActionButtonTheme.backgroundColor,
         ),
       ),
       body: SafeArea(

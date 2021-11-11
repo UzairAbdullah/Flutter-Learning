@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CatalogHeader extends StatelessWidget {
   const CatalogHeader({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class CatalogHeader extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 40,
+            // color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         Text(

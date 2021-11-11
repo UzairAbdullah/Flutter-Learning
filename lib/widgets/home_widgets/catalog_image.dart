@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:install_check/widgets/Themes.dart';
 import 'package:velocity_x/src/extensions/context_ext.dart';
 
@@ -13,12 +14,12 @@ class CatalogImage extends StatelessWidget {
       child: Container(
         child: Image.network(
           image,
+          fit: BoxFit.contain,
         ),
         width: context.percentWidth * 35,
-        // padding: EdgeInsets.all(8),
-
+        padding: EdgeInsets.all(3.0),
         decoration: BoxDecoration(
-            color: MyThemes.creamColor,
+            color: Theme.of(context).canvasColor,
             borderRadius: BorderRadius.circular(15)),
       ),
     );

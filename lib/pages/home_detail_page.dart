@@ -10,14 +10,14 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyThemes.creamColor,
+      backgroundColor: Theme.of(context).canvasColor,
       appBar: AppBar(
         title: Text(catalog.name),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: ButtonBar(
@@ -60,7 +60,7 @@ class HomeDetailPage extends StatelessWidget {
                 height: 20,
                 child: Container(
                   width: context.screenWidth,
-                  color: Colors.white,
+                  color: Theme.of(context).cardColor,
                   child: Column(
                     children: [
                       SizedBox(height: 20),
@@ -69,10 +69,11 @@ class HomeDetailPage extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 32),
                       ),
-                      Text(
-                        catalog.desc,
-                        style: TextStyle(color: Colors.black.withOpacity(0.5)),
-                      ),
+                      Text(catalog.desc,
+                          style: Theme.of(context)
+                              .textTheme
+                              .subtitle2 //TextStyle(color: Colors.black.withOpacity(0.5)),
+                          ),
                     ],
                   ),
                 ),

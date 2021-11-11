@@ -49,7 +49,9 @@ class CatalogItem extends StatelessWidget {
               // Image.network(catalog.Image).box.rounded.color(MyThemes.creamColor).make().p16(),   //Content to build same thing using Velocity_x package
               Hero(
                   tag: Key(catalog.Id.toString()),
-                  child: CatalogImage(image: catalog.Image)),
+                  child: CatalogImage(
+                    image: catalog.Image,
+                  )),
               Expanded(
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,11 +61,12 @@ class CatalogItem extends StatelessWidget {
                     catalog.name,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                   ),
-                  Text(
-                    catalog.desc,
-                    style: TextStyle(
-                        fontSize: 11, color: Color(0x000000).withOpacity(0.5)),
-                  ),
+                  Text(catalog.desc,
+                      style: Theme.of(context).textTheme.subtitle2
+                      // style: TextStyle(
+                      //     fontSize: 11,
+                      //     color: Theme.of(context).textTheme.subtitle2),
+                      ),
                   Expanded(
                       //Expanded used to align BUttonBar to bottom of the amin container containing individual items.
                       child: Align(
@@ -96,7 +99,8 @@ class CatalogItem extends StatelessWidget {
           width: 100,
           height: 110,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15), color: Colors.white),
+              borderRadius: BorderRadius.circular(15),
+              color: Theme.of(context).cardColor),
         ) //.square(100).white.make(),  //Content to build same thing using Velocity_x package
         );
   }

@@ -18,14 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: MyThemes.LightTheme(context),
+      theme: MyThemes.DarkTheme(context),
       // (
       //   // Theme is the settings for light theme
       // ),
       themeMode: ThemeMode.light, // themeMode: ThemeMode.dark,  for dark theme
       darkTheme: MyThemes.DarkTheme(context),
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.loginRoute,
       // home: HomePage(),
       routes: {
         MyRoutes.loginRoute: (context) => LoginPage(),
