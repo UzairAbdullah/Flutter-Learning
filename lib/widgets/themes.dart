@@ -7,10 +7,14 @@ class MyThemes {
   static ThemeData LightTheme(BuildContext context) => ThemeData(
       primarySwatch: Colors.cyan,
       fontFamily: GoogleFonts.poppins().fontFamily,
+      dividerColor: Colors.black,
       cardColor: Colors.white,
       canvasColor: creamColor,
-      // buttonTheme: ButtonThemeData(buttonColor: Colors.cyan),
+      buttonTheme: ButtonThemeData(buttonColor: Colors.amber),
       backgroundColor: Colors.cyan,
+      // elevatedButtonTheme: ElevatedButtonThemeData(
+      //     style: ButtonStyle(
+      //         backgroundColor: MaterialStateProperty.all(Colors.indigo))),
       textTheme: TextTheme(
           subtitle2:
               TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 11)),
@@ -24,6 +28,7 @@ class MyThemes {
   static ThemeData DarkTheme(BuildContext context) => ThemeData(
       primarySwatch: Colors.blue,
       backgroundColor: lightBluishColor,
+      dividerColor: Colors.white,
       brightness: Brightness.dark,
       cardColor: Colors.black,
       canvasColor: darkcreamColor,
@@ -35,6 +40,9 @@ class MyThemes {
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor:
               lightBluishColor), //code to change floating button color. ignored it bcz default color was best choice.
+      // elevatedButtonTheme: ElevatedButtonThemeData(
+      //     style: ButtonStyle(
+      //         backgroundColor: MaterialStateProperty.all(Colors.amber))),
       // accentColor: ,
       // colorScheme: ColorScheme.dark(),
       appBarTheme: AppBarTheme(
