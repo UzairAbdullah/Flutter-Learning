@@ -1,6 +1,12 @@
 import 'package:install_check/models/catalog.dart';
 
 class CartModel {
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel() => cartModel;
+
   late CatalogModel _catalog;
 
   CatalogModel get catalog => _catalog;

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:install_check/models/cart_model.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:install_check/widgets/themes.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -31,6 +33,8 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = CartModel();
+
     return Container(
       height: context.percentHeight * 10,
       // color: Colors.white,
@@ -39,15 +43,22 @@ class _CartTotal extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("\$9999",
+            Text("\$${_cart.totalPrice.toString()}",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
             SizedBox(
               width: 100.0,
               // height: 0.0,
               child: ElevatedButton(
                   onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text("Buying not supported yet")));
+                    Fluttertoast.showToast(
+                        msg: "Buying not supported yet",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER,
+                        timeInSecForIosWeb: 1,
+                        backgroundColor: Theme.of(context).dividerColor,
+                        textColor: Theme.of(context).cardColor);
+                    // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    //     content: Text("Buying not supported yet")));
                   },
                   child: Text("Buy"),
                   style: ButtonStyle(
@@ -71,20 +82,21 @@ class _CartList extends StatefulWidget {
 }
 
 class __CartListState extends State<_CartList> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
         shrinkWrap: true,
         // scrollDirection: Axis.vertical,
-        itemCount: 5,
+        itemCount: _cart.items.length,
         itemBuilder: (context, index) => ListTile(
             leading: Icon(Icons.done),
             trailing: IconButton(
               icon: Icon(Icons.remove_circle_outline),
               onPressed: () {},
             ),
-            title: Text("Item 1")),
+            title: Text(_cart.items[index].name)),
       ),
     );
   }
