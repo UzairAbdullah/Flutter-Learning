@@ -6,6 +6,7 @@ import 'package:install_check/pages/home_detail_page.dart';
 import 'package:install_check/pages/home_page.dart';
 import 'package:velocity_x/src/extensions/bool_ext.dart';
 
+import 'add_to_cart.dart';
 import 'catalog_image.dart';
 
 class CatalogList extends StatelessWidget {
@@ -97,37 +98,5 @@ class CatalogItem extends StatelessWidget {
               color: Theme.of(context).cardColor),
         ) //.square(100).white.make(),  //Content to build same thing using Velocity_x package
         );
-  }
-}
-
-class AddToCart extends StatefulWidget {
-  final Item catalog;
-  const AddToCart({
-    Key? key,
-    required this.catalog,
-  }) : super(key: key);
-
-  @override
-  State<AddToCart> createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<AddToCart> {
-  bool isAdded = false;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () {
-          isAdded = !isAdded;
-          final _catalog = CatalogModel();
-          final _cart = CartModel();
-          _cart.catalog = _catalog;
-          _cart.add(widget.catalog);
-          setState(() {});
-        },
-        child: isAdded ? Icon(Icons.done) : Text("Add to Cart"),
-        style: ButtonStyle(shape: MaterialStateProperty.all(StadiumBorder())
-            //     MaterialStateProperty.all(Colors.cyan),
-            // padding: MaterialStateProperty.all(EdgeInsets.only(right: 5)),
-            ));
   }
 }

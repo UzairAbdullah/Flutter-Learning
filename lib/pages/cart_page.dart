@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:install_check/core/store.dart';
 import 'package:install_check/models/cart_model.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:install_check/widgets/themes.dart';
@@ -33,7 +34,7 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _cart = CartModel();
+    final CartModel _cart = (VxState.store as MyStore).cart;
 
     return Container(
       height: context.percentHeight * 10,
@@ -43,8 +44,19 @@ class _CartTotal extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("\$${_cart.totalPrice.toString()}",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
+            VxConsumer(
+              mutations: {RemoveMutation},
+              notifications: {},
+              builder: (context, store, status) {
+                return Text("\$${_cart.totalPrice.toString()}",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0));
+              },
+            ),
+            // widget(
+            //   child: Text("\$${_cart.totalPrice.toString()}",
+            //       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0)),
+            // ),
             SizedBox(
               width: 100.0,
               // height: 0.0,
@@ -75,9 +87,10 @@ class _CartTotal extends StatelessWidget {
 }
 
 class _CartList extends StatelessWidget {
-  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return Expanded(
       child: ListView.builder(
         shrinkWrap: true,
@@ -87,10 +100,7 @@ class _CartList extends StatelessWidget {
             leading: Icon(Icons.done),
             trailing: IconButton(
               icon: Icon(Icons.remove_circle_outline),
-              onPressed: () {
-                _cart.remove(_cart.items[index]);
-                // setState(() {});
-              },
+              onPressed: () => RemoveMutation(_cart.items[index]),
             ),
             title: Text(_cart.items[index].name)),
       ),
